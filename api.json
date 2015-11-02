@@ -1,15 +1,3 @@
-// DSL file
-
-/*
-  "api":
-      "module":
-      "detail":
-          "method":
-          "name":
-          "arguments":
-          "results":
-*/
-
 {
   "api": [{
     "module": "order",
