@@ -1,0 +1,41 @@
+// DSL file
+
+/*
+  "api":
+      "module":
+      "detail":
+          "method":
+          "name":
+          "arguments":
+          "results":
+*/
+
+{
+  "api": [{
+    "module": "order",
+    "detail": [{
+      "method": "get",
+      "name": "get_order_list",
+      "arguments": ["id"],
+      "results": ""
+    }, {
+      "method": "post",
+      "name": "get_order",
+      "arguments": "",
+      "results": ""
+    }]
+  }, {
+    "module": "article",
+    "detail": [{
+      "method": "get",
+      "name": "get_article_list",
+      "arguments": ["id"],
+      "results": ""
+    }, {
+      "method": "post",
+      "name": "get_article",
+      "arguments": "",
+      "results": ""
+    }]
+  }]
+}
