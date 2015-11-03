@@ -8,7 +8,7 @@ Recently, this tool is used for `flask` app.
 ----------
 ####   Install
 
-` pip install -r requirement `
+` pip install -r requirement.text `
 
 ` cd acgt `
 
