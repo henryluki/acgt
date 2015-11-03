@@ -2,17 +2,15 @@
 
 Auto Code Generation Tools
 
-This is a tool for code generatation, define an `api.json` file output api codes.
+This is a tool for code generatation, define an `api.json` file, output api codes.
 Recently, this tool is used for `flask` app.
 
 ----------
 ####   Install
 
-` git clone https://github.com/henryluki/acgt.git`
+` pip install -r requirement `
 
 ` cd acgt `
-
-` pip install -r requirement.text `
 
 ` python setup.py install `
 
@@ -38,6 +36,7 @@ Take a look at api.json for more detail.
 - acgt
 
 ` acgt usage `
+
 - acgt init
 
 ` acgt init [option] PROJECT_NAME `
@@ -49,3 +48,19 @@ Take a look at api.json for more detail.
 ####  Run example
 
 ` acgt init --flask=True "example" `
+
+#### Run as a script
+
+it requires `api.json ` at the same directory
+
+```
+from acgt.acgt import Acgt
+
+def main():
+  # project_name = "example"
+  Acgt("example").parse_apis()
+
+if __name__ == '__main__':
+  main()
+```
+Take a look at ` scripts.py`

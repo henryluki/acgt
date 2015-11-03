@@ -26,7 +26,7 @@ class Acgt(object):
     j = self.to_json()
     apis = []
     for x in range(len(j["api"])):
-      apis.append(self.parse_module(j["api"][x]))
+      apis.append(dict({'module': j["api"][x]["module"], 'detail': self.parse_module(j["api"][x])}))
     Gen(self.project_name).gen_template(apis)
 
   @classmethod
@@ -75,4 +75,4 @@ class Acgt(object):
     print "-h  --help         usage info "
 
 if __name__ == '__main__':
-  Acgt("app").parse_apis()
+  Acgt("example").parse_apis()

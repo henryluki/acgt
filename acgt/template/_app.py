@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 % if routes:
 % for m in routes:
-% for r in m:
-@app.route('{{ "/" + r["name"]}}', methods=['{{r["method"]}}'])
+% for r in m["detail"]:
+@app.route('{{ "/" + m["module"]+ "/" + r["name"]}}', methods=['{{r["method"]}}'])
 def {{r["name"]}}():
+% if any(r["arguments"]):
+% for a in r["arguments"]:
+  {{a}} = request.args.get('{{a}}')
+% end
+% end
   data = dict({"success": "success"})
   return jsonify(data)
 
