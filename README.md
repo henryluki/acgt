@@ -8,6 +8,8 @@ Recently, this tool is used for `flask` app.
 ----------
 ####   Install
 
+` git clone https://github.com/henryluki/acgt.git`
+
 ` pip install -r requirement.text `
 
 ` cd acgt `
