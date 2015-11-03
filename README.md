@@ -10,9 +10,9 @@ Recently, this tool is used for `flask` app.
 
 ` git clone https://github.com/henryluki/acgt.git`
 
-` pip install -r requirement.text `
-
 ` cd acgt `
+
+` pip install -r requirement.text `
 
 ` python setup.py install `
 
