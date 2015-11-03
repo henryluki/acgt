@@ -1,15 +1,17 @@
-# coding=utf-8
-import io,json,sys,getopt
+# -*- coding: utf-8 -*-
+import io,json,sys,getopt,os
 from gen import Gen
 
 class Acgt(object):
   """docstring for Acgt"""
-  def __init__(self):
+  def __init__(self, project_name):
     super(Acgt, self).__init__()
+    self.project_name = project_name
 
   @classmethod
   def read_file(self):
-    with io.open("api.json", "r") as file:
+    path = os.popen('pwd').readlines()[0][0:-1]
+    with io.open(path + "/api.json", "r") as file:
       buff = file.read()
       file.close()
     return str(buff).strip().encode("utf-8")
@@ -20,13 +22,12 @@ class Acgt(object):
     api_json = json.loads(string, encoding='utf-8')
     return api_json
 
-  @classmethod
   def parse_apis(self):
     j = self.to_json()
     apis = []
     for x in range(len(j["api"])):
       apis.append(self.parse_module(j["api"][x]))
-    Gen.gen_template(apis)
+    Gen(self.project_name).gen_template(apis)
 
   @classmethod
   def parse_module(self, arg):
@@ -74,4 +75,4 @@ class Acgt(object):
     print "-h  --help         usage info "
 
 if __name__ == '__main__':
-  Acgt.take_arguments()
+  Acgt("app").parse_apis()
