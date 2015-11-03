@@ -1,6 +1,6 @@
-from string import Template
-import io
-
+# coding=utf-8
+import io,os
+from bottle import SimpleTemplate
 
 class Gen(object):
 
@@ -16,16 +16,24 @@ class Gen(object):
     return buff
 
   @classmethod
-  def gen_template(self):
+  def gen_template(self, code):
     temp = self.read_template()
-    s = Template(temp)
-    self.write_file(s.substitute({'title':title,'code':code}))
+    s = SimpleTemplate(temp)
+    s = s.render({'routes':code})
+    self.write_file(s)
 
   @classmethod
-  def write_file(self,s):
-    with open("app/app.py", "w") as file:
+  def write_file(self, s):
+    path = "app"
+    self.check_dir(path)
+    with open(path + "/app.py", "w") as file:
       file.write(s)
       file.close()
+
+  @classmethod
+  def check_dir(self, path):
+    if not os.path.exists(path):
+      os.makedirs(path)
 
 if __name__ == '__main__':
   Gen.gen_template()

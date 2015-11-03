@@ -7,7 +7,7 @@
       "arguments": ["id"],
       "results": ""
     }, {
-      "method": "post",
+      "method": "get",
       "name": "get_order",
       "arguments": "",
       "results": ""
@@ -20,7 +20,7 @@
       "arguments": ["id"],
       "results": ""
     }, {
-      "method": "post",
+      "method": "get",
       "name": "get_article",
       "arguments": "",
       "results": ""
