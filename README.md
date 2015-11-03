@@ -2,7 +2,7 @@
 
 Auto Code Generation Tools
 
-This is a tool for code generatation, define a `api.json` file output a api codes.
+This is a tool for code generatation, define an `api.json` file output api codes.
 Recently, this tool is used for `flask` app.
 
 ----------
