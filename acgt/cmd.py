@@ -14,10 +14,11 @@ def init(project_name, js, flask):
   project = project_name
 
   if js:
-    click.echo(" js undone!")
+    click.echo(" init js ... ")
+    Acgt(project).parse_apis("js")
   elif flask:
     click.echo("init flask app ...")
-    Acgt(project).parse_apis()
+    Acgt(project).parse_apis("flask")
   else:
     click.echo("*** usage info ***")
     click.echo("--(flask,js)   generate code by acgt")

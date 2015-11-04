@@ -22,12 +22,12 @@ class Acgt(object):
     api_json = json.loads(string, encoding='utf-8')
     return api_json
 
-  def parse_apis(self):
+  def parse_apis(self, feature):
     j = self.to_json()
     apis = []
     for x in range(len(j["api"])):
       apis.append(dict({'module': j["api"][x]["module"], 'detail': self.parse_module(j["api"][x])}))
-    Gen(self.project_name).gen_template(apis)
+    Gen(self.project_name).gen_template(apis, feature)
 
   @classmethod
   def parse_module(self, arg):
@@ -75,4 +75,4 @@ class Acgt(object):
     print "-h  --help         usage info "
 
 if __name__ == '__main__':
-  Acgt("example").parse_apis()
+  Acgt("example").parse_apis("flask")

@@ -3,7 +3,7 @@
 Auto Code Generation Tools
 
 This is a tool for code generatation, define an `api.json` file, output api codes.
-Recently, this tool is used for `flask` app.
+Recently, this tool is used for `flask` app and `js` ajax codes.
 
 ----------
 ####   Install
@@ -47,11 +47,17 @@ Take a look at api.json for more detail.
 
 ` acgt init --flask=True PROJECT_NAME `
 
+- for js
+
+` acgt init --js=True PROJECT_NAME `
+
 ####  Run example
 
 ` acgt init --flask=True "example" `
 
-#### Run as a script
+` acgt init --js=True "example" `
+
+####  Run as a script
 
 it requires `api.json ` at the same directory
 
