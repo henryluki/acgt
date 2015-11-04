@@ -10,7 +10,7 @@ app = Flask(__name__)
 def {{r["name"]}}():
 % if any(r["arguments"]):
 % for a in r["arguments"]:
-  {{a}} = request.args.get('{{a}}')
+  {{a}} = request.{{'args' if r["method"] == "get" or r["method"] == "GET" else 'form' }}.get('{{a}}')
 % end
 % end
   data = dict({"success": "success"})

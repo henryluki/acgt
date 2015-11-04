@@ -7,9 +7,9 @@
       "arguments": ["id"],
       "results": ""
     }, {
-      "method": "get",
+      "method": "post",
       "name": "get_order",
-      "arguments": "",
+      "arguments": ["id"],
       "results": ""
     }]
   }, {
