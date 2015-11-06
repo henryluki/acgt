@@ -12,7 +12,6 @@ class Acgt(object):
   def read_file(self):
     with io.open(self.path + "api.json", "r") as file:
       buff = file.read()
-      file.close()
     return str(buff).strip().encode("utf-8")
 
   def get_json(self):

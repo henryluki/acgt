@@ -15,7 +15,6 @@ class Gen(object):
     path = os.path.dirname(os.path.abspath(__file__))
     with open(path + "/template/" + self.file, "r") as file:
       buff = file.read()
-      file.close()
     return buff
 
   def gen_template(self, code, feature):
@@ -41,7 +40,6 @@ class Gen(object):
     self.check_dir(path)
     with open(path + "/" + self.file.strip("_"), "w") as file:
       file.write(s)
-      file.close()
 
   def check_dir(self, path):
     if not os.path.exists(path):
