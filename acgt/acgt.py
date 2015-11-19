@@ -30,7 +30,8 @@ class Acgt(object):
     for x in range(len(arg["detail"])):
       yield self.parse_detail(arg["detail"][x])
 
-  def parse_detail(self, arg):
+  @staticmethod
+  def parse_detail(arg):
     return dict({'arguments':arg["arguments"], 'method':arg["method"], 'name':arg["name"], 'results': arg["results"]})
 
   def take_arguments(self):
@@ -61,7 +62,8 @@ class Acgt(object):
       else:
         assert False, "Option error"
 
-  def usage(self):
+  @staticmethod
+  def usage():
     print "*** usage info ***"
     print "--api=(flask,js)   generate code by acgt"
     print "-h  --help         usage info "

@@ -41,7 +41,8 @@ class Gen(object):
     with open(path + "/" + self.file.strip("_"), "w") as file:
       file.write(s)
 
-  def check_dir(self, path):
+  @staticmethod
+  def check_dir(path):
     if not os.path.exists(path):
       os.makedirs(path)
 
