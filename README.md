@@ -70,12 +70,12 @@ def main():
   # "api.json" relative path
   acgt.path = ""
   # feature = "flask"
-  print "init flask app ..."
+  print("init flask app ...")
   acgt.parse_apis("flask")
   # feature = "js"
-  print "init js ..."
+  print("init js ...")
   acgt.parse_apis("js")
-  print "done!"
+  print("done!")
 
 if __name__ == '__main__':
   main()
