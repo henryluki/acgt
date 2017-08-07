@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import io,json,sys,getopt,os
-from gen import Gen
+import json,sys,getopt,os
+from acgt.gen import Gen
 
 class Acgt(object):
   """docstring for Acgt"""
@@ -10,9 +10,9 @@ class Acgt(object):
     self.path = os.popen('pwd').readlines()[0][0:-1] + "/"
 
   def read_file(self):
-    with io.open(self.path + "api.json", "r") as file:
+    with open(self.path + "api.json", "r") as file:
       buff = file.read()
-    return str(buff).strip().encode("utf-8")
+    return str(buff).strip()
 
   def get_json(self):
     string = self.read_file()
@@ -40,7 +40,7 @@ class Acgt(object):
     try:
       opts, args = getopt.getopt(sys.argv[1:], "h", ["help", "api="])
     except getopt.GetoptError as err:
-      print str(err)
+      print(str(err))
       self.usage()
       sys.exit(2)
     self.execute_feature(opts)
@@ -52,21 +52,21 @@ class Acgt(object):
         sys.exit(2)
       elif o == "--api":
         if a == "flask":
-          print "Generate app..."
+          print("Generate app...")
           self.parse_apis()
-          print "Done!"
+          print("Done!")
         elif a == "js":
-          print "js..."
+          print("js...")
         else:
-          print "Take some feature liki 'flask'"
+          print("Take some feature liki 'flask'")
       else:
         assert False, "Option error"
 
   @staticmethod
   def usage():
-    print "*** usage info ***"
-    print "--api=(flask,js)   generate code by acgt"
-    print "-h  --help         usage info "
+    print("*** usage info ***")
+    print("--api=(flask,js)   generate code by acgt")
+    print("-h  --help         usage info ")
 
 if __name__ == '__main__':
   acgt = Acgt("example")

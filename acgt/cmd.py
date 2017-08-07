@@ -1,5 +1,5 @@
 import click
-from acgt import Acgt
+from acgt.acgt import Acgt
 
 @click.group()
 def cli():
