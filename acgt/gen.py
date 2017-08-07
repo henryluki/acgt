@@ -2,8 +2,8 @@
 import io,os
 from bottle import SimpleTemplate
 
-class Gen(object):
 
+class Gen(object):
   """docstring for Gen"""
   def __init__(self, project_name):
     super(Gen, self).__init__()
